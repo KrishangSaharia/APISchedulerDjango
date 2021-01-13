@@ -13,7 +13,7 @@ All api endpoints had been created in scheduler app under the root directory.
 ### 1. Scheduling Endpoint :
 This requires two arguements - first arguement will be datetime string in the format '%d/%m/%y %H:%M:%S (IST)' . For eg. 09/01/21 13:39:30 .  
 and second arguement will be the url which is to be called through GET request at scheduled time (first arguement) . For eg. https://google.com .  
-For eg . http://127.0.0.1:8000?url=https://google.com/?&datetime=09/01/21%2013:39:30
+For eg . [ http://127.0.0.1:8000?url=https://google.com/?&datetime=09/01/21 13:39:30](http://127.0.0.1:8000?url=https://google.com/?&datetime=09/01/21%2013:39:30)
 
 Response will JSON data with a message "Task Scheduled Successfully!" , if scheduling is successfull.
 For eg. - 
