@@ -22,31 +22,6 @@ def call_url(url):
 
 
 @api_view(['GET'])
-def schedule_url(request):
-
-    ''' Scheduling endpoint to schedule an api call 
-    Needs a url and a datetime as GET parameter 
-    to call a function call_url when current datetime equals passed datetime in request'''
-
-    url = request.GET['url']
-    stamp = request.GET['datetime']
-    stamp = datetime.strptime(stamp, '%d/%m/%y %H:%M:%S')
-
-    if stamp < datetime.now():
-
-        ''' To check if datetime sent had already passes or not 
-        If passes , it will return  400 Bad Request'''
-
-        return Response({'message':'Date sent had already passsed!'}, status = status.HTTP_400_BAD_REQUEST)
-
-    scheduler = BackgroundScheduler()
-    scheduler.add_job(call_url, 'cron', args=[url], second = stamp.second, minute = stamp.minute, hour = stamp.hour, day = stamp.day, month = stamp.month, year = stamp.year)
-    scheduler.start()
-
-    return Response({'message': 'Task Scheduled Successfully!'}, status = status.HTTP_200_OK)
-
-
-@api_view(['GET'])
 def ping_status(request):
 
     ''' Ping endpoint to check the status of server , whether it is alive or not 
@@ -65,3 +40,28 @@ def ping_status(request):
     }
 
     return Response(data, status = status.HTTP_200_OK)
+
+
+@api_view(['GET'])
+def schedule_url(request):
+
+    ''' Scheduling endpoint to schedule an api call 
+    Needs a url and a datetime as GET parameter 
+    to call a function call_url when current datetime equals passed datetime in request'''
+
+    url = request.GET['url']
+    stamp = request.GET['datetime']
+    stamp = datetime.strptime(stamp, '%d/%m/%y %H:%M:%S')
+
+    if stamp < datetime.now():
+
+        ''' To check if datetime sent had already passes or not 
+        If passes , it will return  400 Bad Request'''
+
+        return Response({'message':'Datetime sent had already passsed!'}, status = status.HTTP_400_BAD_REQUEST)
+
+    scheduler = BackgroundScheduler()
+    scheduler.add_job(call_url, 'cron', args=[url], second = stamp.second, minute = stamp.minute, hour = stamp.hour, day = stamp.day, month = stamp.month, year = stamp.year)
+    scheduler.start()
+
+    return Response({'message': 'Task Scheduled Successfully!'}, status = status.HTTP_200_OK)
