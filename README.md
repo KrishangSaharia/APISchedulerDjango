@@ -23,8 +23,7 @@ For eg. -
 }
 ```
 If datetime value sent is already past , then it throw an 400 Bad Request error, with a message in response.   
-For eg-  
-For eg. - 
+For eg-   
 ```
 {
     "message": "Date sent had already passsed!"
@@ -35,6 +34,7 @@ For eg. -
 ### 2. Ping Endpoint -
 This endpoint checks whether server is alive or not , and returns JSON message 'OK' is server is alive , otherwise returns 'Network Error'.
 It takes a arguement named host ,to check whether the server is alive or not. For eg. host=google.com 
+[ http://127.0.0.1:8000/ping?host=localhost](http://127.0.0.1:8000/ping?host=localhost)
 For eg. - 
 ```
 {
