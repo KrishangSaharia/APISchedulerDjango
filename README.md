@@ -45,6 +45,7 @@ For eg. -
 ```
 
 ## Setup
+Activarte your virtualenv.  
 To install all the dependencies run: 
 
 ```
