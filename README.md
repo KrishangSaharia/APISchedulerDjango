@@ -5,14 +5,14 @@
 * [Setup](#setup)
 
 ## General info
-This project includes scheduling Django Rest APIs, it uses AdvancedPythonScheduler module for scheduling tasks.
+This project includes scheduling Django Rest APIs, it uses AdvancedPythonScheduler module for scheduling tasks in which a cron job is set.
 This contains 2 endpoints - 
 one for scheduling and other one is ping endpoint to check whether the server is alive or not .  
-All api endpoints had been created in scheduler app.  
+All api endpoints had been created in scheduler app under the root directory.  
 
 ### 1. Scheduling Endpoint :
-This requires two arguements - first arguement will be datetime string in the format '%d/%m/%y %H:%M:%S (IST)' . For eg. 09/01/21 13:39:30 .
-and second arguement will be the url which is to be called through GET request at scheduled time (first arguement) . For eg. https://google.com .
+This requires two arguements - first arguement will be datetime string in the format '%d/%m/%y %H:%M:%S (IST)' . For eg. 09/01/21 13:39:30 .  
+and second arguement will be the url which is to be called through GET request at scheduled time (first arguement) . For eg. https://google.com .  
 For eg . http://127.0.0.1:8000?url=https://google.com/?&datetime=09/01/21%2013:39:30
 
 Response will JSON data with a message "Task Scheduled Successfully!" , if scheduling is successfull.
@@ -20,6 +20,14 @@ For eg. -
 ```
 {
     "message": "Task Scheduled Successfully!"
+}
+```
+If datetime value sent is already past , then it throw an 400 Bad Request error, with a message in response.   
+For eg-  
+For eg. - 
+```
+{
+    "message": "Date sent had already passsed!"
 }
 ```
 
@@ -53,7 +61,6 @@ $ python manage.py runserver
 ```
 ### Now , you can start deploying at your local host.
 At http://127.0.0.1:8000/
-### This Project has been deployed on heroku also - 
-At https://pacific-woodland-79523.herokuapp.com/
+
 
 
