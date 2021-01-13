@@ -52,8 +52,8 @@ $ python manage.py migrate
 $ python manage.py runserver
 ```
 ### Now , you can start deploying at your local host.
-
+At http://127.0.0.1:8000/
 ### This Project has been deployed on heroku also - 
-Link is https://pacific-woodland-79523.herokuapp.com/
+At https://pacific-woodland-79523.herokuapp.com/
 
 
