@@ -28,7 +28,7 @@ If datetime value sent is already past , then it throw an 400 Bad Request error,
 For eg-   
 ```
 {
-    "message": "Date sent had already passsed!"
+    "message": "Datetime sent had already passsed!"
 }
 ```
 
