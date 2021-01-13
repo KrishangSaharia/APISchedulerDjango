@@ -21,7 +21,10 @@ For eg. -
 {
     "message": "Task Scheduled Successfully!"
 }
-For eg . [ http://127.0.0.1:8000?url=https://google.com/?&datetime=09/01/20 13:39:30](http://127.0.0.1:8000?url=https://google.com/?&datetime=09/01/20%2013:39:30)
+```
+For eg-
+```
+[ http://127.0.0.1:8000?url=https://google.com/?&datetime=09/01/20 13:39:30](http://127.0.0.1:8000?url=https://google.com/?&datetime=09/01/20%2013:39:30)
 ```
 If datetime value sent is already past , then it throw an 400 Bad Request error, with a message in response.   
 For eg-   
