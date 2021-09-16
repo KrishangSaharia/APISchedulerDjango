@@ -5,7 +5,7 @@
 * [Setup](#setup)
 
 ## General info
-This project includes scheduling Django Rest APIs, it uses AdvancedPythonScheduler module for scheduling tasks in which a cron job is set.
+This project includes scheduling Django Rest APIs, it uses AdvancedPythonScheduler module for scheduling tasks.
 This contains 2 endpoints - 
 one for scheduling and other one is ping endpoint to check whether the server is alive or not .  
 All api endpoints had been created in scheduler app under the root directory.  
